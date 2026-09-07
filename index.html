@@ -979,7 +979,26 @@
    FUTURISTIC / EMERGING TECHNOLOGY
    CLOSING PAGE
    ========================================= */
+.company-logo-placeholder {
+    background: linear-gradient(135deg, #C0C0C0, #F5F5F5);
+    padding: 12px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    min-height: 75px;
+    box-sizing: border-box;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); */
+}
 
+.company-logo-placeholder img {
+    max-width: 175px;
+    max-height: 62px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
 .closing-page {
     background:
         radial-gradient(circle at 20% 25%, rgba(0, 190, 255, 0.18), transparent 30%),
@@ -1119,7 +1138,204 @@
     transform: scale(1.05);
 }
 
+/* =========================================================
+   INDEX PAGES - COMPANY / TECHNOLOGY / SECTOR
+   ========================================================= */
 
+.index-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 0 60px;
+    box-sizing: border-box;
+}
+
+/* Main page title */
+.index-page > h1 {
+    margin: 0 0 30px;
+    padding-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #123B68;
+    border-bottom: 3px solid #123B68;
+    letter-spacing: -0.5px;
+}
+
+/* =========================================================
+   INDEX SECTION
+   ========================================================= */
+
+.index-section {
+    margin-bottom: 25px;
+    padding: 22px 25px;
+    background: #ffffff;
+    border: 1px solid #dfe7ef;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+}
+
+.index-section h2 {
+    margin: 0 0 16px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #123B68;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+/* =========================================================
+   COMPANY DIRECTORY TABLE
+   ========================================================= */
+
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #ffffff;
+}
+
+.index-table thead th {
+    padding: 13px 14px;
+    text-align: left;
+    background: #123B68;
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid #123B68;
+}
+
+.index-table tbody td {
+    padding: 12px 14px;
+    color: #334155;
+    border-bottom: 1px solid #e5eaf0;
+    vertical-align: middle;
+}
+
+/* Alternating table rows */
+.index-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Hover effect */
+.index-table tbody tr:hover {
+    background: #eef5fb;
+}
+
+/* Number column */
+.index-table th:first-child,
+.index-table td:first-child {
+    width: 55px;
+    text-align: center;
+}
+
+/* Company name */
+.index-table td:nth-child(2) {
+    font-weight: 600;
+    color: #123B68;
+}
+
+/* Category */
+.index-table td:nth-child(3) {
+    font-weight: 500;
+}
+
+/* =========================================================
+   INDEX LIST
+   ========================================================= */
+
+.index-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 25px;
+}
+
+.index-list li {
+    position: relative;
+    padding: 9px 12px 9px 25px;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e8edf2;
+}
+
+/* Small blue indicator */
+.index-list li::before {
+    content: "•";
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    color: #1769aa;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.index-list li:hover {
+    background: #eef5fb;
+    border-color: #cbddeb;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .index-page {
+        width: 94%;
+        padding: 30px 0 40px;
+    }
+
+    .index-page > h1 {
+        font-size: 27px;
+    }
+
+    .index-section {
+        padding: 18px;
+    }
+
+    .index-section h2 {
+        font-size: 17px;
+    }
+
+    .index-list {
+        grid-template-columns: 1fr;
+    }
+
+    .index-table {
+        font-size: 13px;
+    }
+
+    .index-table th,
+    .index-table td {
+        padding: 10px 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL SCREEN TABLE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .index-section:has(.index-table) {
+        overflow-x: auto;
+    }
+
+    .index-table {
+        min-width: 700px;
+    }
+
+    .index-page > h1 {
+        font-size: 24px;
+    }
+}
 
 
 /* =========================================
@@ -1514,11 +1730,11 @@
 
     <div class="stats-grid">
         <div class="stat-card">
-            <div class="stat-number">23</div>
+            <div class="stat-number">25</div>
             <div class="stat-label">Registered ICT companies with products and services</div>
         </div>
         <div class="stat-card alt">
-            <div class="stat-number">25+</div>
+            <div class="stat-number">27+</div>
             <div class="stat-label">Digital Products & Services</div>
         </div>
     </div>
@@ -1563,102 +1779,6 @@
 </div>
 
 <!-- ========== COMPANY PROFILES ========== -->
-<!-- <div class="page company-page">
-    <div class="company-header">
-        <div class="company-info-left">
-            <h1>Zealous Systems</h1>
-            <div class="company-meta">
-                <span><strong>Category:</strong> IT Company</span>
-                <span><strong>Focus:</strong> Tourism, Retail</span>
-            </div>
-        </div>
-        <div class="company-logo-placeholder">
-            <img src="Image/image.png" alt="Zealous Systems Logo">
-        </div>
-    </div>
-
-    <div class="company-overview">
-        <h2>Company Overview</h2>
-        <p>Zealous Systems is an IT company providing digitalized solutions for travel agencies and retail businesses in Bhutan. Specializing in tourism management and e-commerce platforms, they have developed locally built solutions that serve the travel and hospitality sectors with real-time payment integration capabilities.</p>
-    </div>
-
-    <div class="products-section">
-        <h2>Products & Solutions</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">✈️</div>
-                <h3>eKor</h3>
-                <p>Comprehensive tourism platform designed for travel and tour agencies in Bhutan. Streamlines tour operations and booking management.</p>
-                <div class="product-meta"><strong>Implementation:</strong> 2025<br><strong>Status:</strong> Locally Built</div>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🛒</div>
-                <h3>Buy&Sell</h3>
-                <p>E-commerce and retail management solution enabling real-time payment confirmation with integrated banking. Supports inventory and sales tracking.</p>
-                <div class="product-meta"><strong>Implementation:</strong> 2024<br><strong>Status:</strong> Locally Built</div>
-            </div>
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        <div class="info-section">
-            <h3>Key Capabilities</h3>
-            <div class="tag-group">
-                <div class="tag tech-erp">E-Commerce</div>
-                <div class="tag tech-erp">POS Integration</div>
-                <div class="tag tech-erp">Payment Gateway</div>
-                <div class="tag tech-erp">Booking Management</div>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h3>Technology Areas</h3>
-            <div class="tag-group">
-                <div class="tag">Web Platform</div>
-                <div class="tag">Real-time Integration</div>
-            </div>
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-        <div class="info-section">
-            <h3>Sectors Served</h3>
-            <div class="tag-group">
-                <div class="tag">Tourism</div>
-                <div class="tag">Retail</div>
-                <div class="tag">E-Commerce</div>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h3>Target Users</h3>
-            <div class="tag-group">
-                <div class="tag">Travel Agencies</div>
-                <div class="tag">Retailers</div>
-                <div class="tag">Small Businesses</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="info-section">
-        <h3>Current Clients</h3>
-        <div class="info-list">
-            <ul>
-                <li><strong>Tourism:</strong> Yangphel Adventure</li>
-                <li><strong>Retail:</strong> Smart Hubs Electronic, Garden Sales, Space 34, Chhom, and others</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="contact-section">
-        <h3>Get in Touch</h3>
-        <div class="contact-details">
-            <strong>Contact Person:</strong> Tashi Tobgay<br>
-            <strong>Email:</strong> tobgay@zealoussystems.com<br>
-            <strong>Phone:</strong> +975 17125802
-        </div>
-    </div>
-</div> -->
 <div class="page company-page">
     <div class="company-header">
         <div class="company-info-left">
@@ -1851,98 +1971,6 @@
 </div>
 
 <!-- ========== ADDITIONAL COMPANY PROFILES (Abbreviated for space) ========== -->
-<!-- <div class="page company-page">
-    <div class="company-header">
-        <div class="company-info-left">
-            <h1>Dragon Coders Private Limited</h1>
-            <div class="company-meta">
-                <span><strong>Category:</strong> IT Company</span>
-                <span><strong>Focus:</strong> Retail, Hospitality, E-commerce</span>
-            </div>
-        </div>
-        <div class="company-logo-placeholder">
-            <img src="Image/1.png" alt="Dragon Coder Logo">
-        </div>
-    </div>
-
-    <div class="company-overview">
-        <h2>Company Overview</h2>
-        <p>Dragon Coders is a leading IT solutions provider offering a comprehensive suite of products including POS systems, inventory management, e-commerce platforms, booking systems, and social networking solutions. They serve diverse sectors with robust, locally developed digital transformation tools.</p>
-    </div>
-
-    <div class="products-section">
-        <h2>Products & Solutions</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-icon">💳</div>
-                <h3>Dragon POS</h3>
-                <p>Advanced point-of-sale system for retail and restaurant management with comprehensive inventory tracking and sales reporting.</p>
-                <div class="product-meta"><strong>Since:</strong> 2020</div>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">📅</div>
-                <h3>Dragon Booking</h3>
-                <p>Scheduling and booking platform for hotels, restaurants, and event management with real-time availability tracking.</p>
-                <div class="product-meta"><strong>Since:</strong> 2024</div>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">🛍️</div>
-                <h3>Yalula</h3>
-                <p>E-commerce marketplace connecting local businesses with customers for digital commerce and online sales.</p>
-                <div class="product-meta"><strong>Since:</strong> 2023</div>
-            </div>
-            <div class="product-card">
-                <div class="product-icon">📦</div>
-                <h3>Zhimpu & Namkoe</h3>
-                <p>Specialized solutions for inventory management and service scheduling with advanced automation features.</p>
-                <div class="product-meta"><strong>Since:</strong> 2025</div>
-            </div>
-        </div>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-        <div class="info-section">
-            <h3>Key Capabilities</h3>
-            <div class="tag-group">
-                <div class="tag tech-erp">POS Systems</div>
-                <div class="tag tech-erp">Inventory Mgmt</div>
-                <div class="tag tech-erp">E-Commerce</div>
-                <div class="tag tech-erp">Booking System</div>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <h3>Sectors Served</h3>
-            <div class="tag-group">
-                <div class="tag">Retail</div>
-                <div class="tag">F&B</div>
-                <div class="tag">Hospitality</div>
-                <div class="tag">Events</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="info-section" style="margin-top: 20px;">
-        <h3>Notable Clients</h3>
-        <div class="info-list">
-            <ul>
-                <li>Japan Selections, Nyings Bhutan, Legendary Lounge</li>
-                <li>Dzongchu Check Mart, Changangkha CFC, KayDee Futsal</li>
-                <li>Sherubtse Football Ground, and various restaurants & retail establishments</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="contact-section">
-        <h3>Get in Touch</h3>
-        <div class="contact-details">
-            <strong>Company:</strong> Dragon Coders Private Limited<br>
-            <strong>Email:</strong> info@dcpl.bt<br>
-            <strong>Phone:</strong> +975 17124535
-        </div>
-    </div>
-</div> -->
-
 <div class="page company-page">
     <div class="company-header">
         <div class="company-info-left">
@@ -3120,6 +3148,652 @@
         </div>
     </div>
 </div>
+<div class="page company-page">
+
+    <div class="company-header">
+        <div class="company-info-left">
+            <h1>Yang Khor Private Limited</h1>
+            <div class="company-meta">
+                <span><strong>Category:</strong> ICT Solutions & Systems Integration</span>
+                <span><strong>Established:</strong> 2005</span>
+                <span><strong>Focus:</strong> Enterprise Digital Transformation</span>
+            </div>
+        </div>
+
+        <div class="company-logo-placeholder">
+            <img src="Image/21.png" alt="Yang Khor Private Limited Logo">
+        </div>
+    </div>
+
+
+    <div class="company-overview">
+        <h2>Company Overview</h2>
+        <p>
+            Yang Khor Private Limited (YKPL) is a Bhutanese ICT solutions and systems
+            integration company established in 2005. The company delivers end-to-end
+            digital transformation solutions covering enterprise software, cloud
+            technologies, cybersecurity, networking, systems integration, enterprise
+            mobility and managed support services.
+        </p>
+
+        <p>
+            YKPL serves government agencies, regulatory bodies, financial institutions,
+            corporations, healthcare institutions, educational organizations and private
+            enterprises through bespoke, secure and scalable technology solutions.
+        </p>
+    </div>
+
+
+    <div class="products-section">
+        <h2>Products & Solutions</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-icon">💻</div>
+                <h3>Enterprise Software Solutions</h3>
+                <p>
+                    Bespoke enterprise applications, ERP, CRM, HRM and workflow
+                    management systems designed around organizational processes and
+                    operational requirements.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Enterprise Applications
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">☁️</div>
+                <h3>Cloud & Infrastructure Solutions</h3>
+                <p>
+                    Cloud design, deployment and migration, servers and storage,
+                    virtualization, hybrid infrastructure, backup, disaster recovery
+                    and infrastructure performance optimization.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Cloud & Infrastructure
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🔐</div>
+                <h3>Cybersecurity & Data Protection</h3>
+                <p>
+                    Security assessment and hardening, endpoint and network security,
+                    identity and access management, secure architecture, data protection
+                    and cyber-resilience solutions.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Cybersecurity
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🌐</div>
+                <h3>Networking & Systems Integration</h3>
+                <p>
+                    Enterprise network design, secure connectivity, hardware and
+                    software integration, data-centre solutions, collaboration systems,
+                    monitoring and troubleshooting.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Networking & Integration
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">📱</div>
+                <h3>Enterprise Mobility Solutions</h3>
+                <p>
+                    Android, iOS and cross-platform mobile applications supporting
+                    mobile workforce enablement, secure remote access and integration
+                    with enterprise platforms.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Mobile Applications
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🛠️</div>
+                <h3>Managed Services & Support</h3>
+                <p>
+                    Preventive and corrective maintenance, helpdesk and application
+                    support, infrastructure monitoring, SLA-based services, training,
+                    documentation and knowledge transfer.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Managed ICT Services
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="info-section">
+        <h3>Digital Products & Platforms</h3>
+
+        <div class="tag-group">
+            <div class="tag tech-erp">Bespoke Enterprise Systems</div>
+            <div class="tag tech-erp">E-Government Platforms</div>
+            <div class="tag tech-erp">Financial Sector Solutions</div>
+            <div class="tag tech-erp">Trade & Regulatory Systems</div>
+            <div class="tag tech-erp">ERP / CRM / HRM</div>
+            <div class="tag tech-erp">Web Portals</div>
+            <div class="tag tech-erp">Mobile Applications</div>
+            <div class="tag tech-erp">API & Integration Services</div>
+            <div class="tag tech-erp">Workflow Automation</div>
+            <div class="tag tech-erp">Data & Reporting Solutions</div>
+            <div class="tag tech-erp">Cloud-Enabled Services</div>
+            <div class="tag tech-erp">Managed Digital Services</div>
+        </div>
+    </div>
+
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+        <div class="info-section">
+            <h3>Key Capabilities</h3>
+
+            <div class="tag-group">
+                <div class="tag">Software Development</div>
+                <div class="tag">Systems Integration</div>
+                <div class="tag">Cloud Computing</div>
+                <div class="tag">Cybersecurity</div>
+                <div class="tag">Networking</div>
+                <div class="tag">Enterprise Mobility</div>
+                <div class="tag">Workflow Automation</div>
+                <div class="tag">Data & Reporting</div>
+                <div class="tag">Managed Services</div>
+                <div class="tag">Technical Support</div>
+            </div>
+        </div>
+
+
+        <div class="info-section">
+            <h3>Target Markets</h3>
+
+            <div class="tag-group">
+                <div class="tag">Government</div>
+                <div class="tag">Financial Services</div>
+                <div class="tag">Insurance & Microfinance</div>
+                <div class="tag">Public Enterprises</div>
+                <div class="tag">Telecommunications</div>
+                <div class="tag">Healthcare</div>
+                <div class="tag">Education & Research</div>
+                <div class="tag">Legal & Judicial</div>
+                <div class="tag">Corporate Enterprises</div>
+                <div class="tag">Hospitality & Services</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Digital Transformation Solutions</h3>
+
+        <p>
+            YKPL develops and implements digital solutions across the complete
+            technology lifecycle, from requirements analysis and solution architecture
+            through development, integration, testing, deployment, training and
+            post-deployment support.
+        </p>
+
+        <div class="tag-group">
+            <div class="tag">Requirements Analysis</div>
+            <div class="tag">Solution Architecture</div>
+            <div class="tag">Bespoke Development</div>
+            <div class="tag">System Configuration</div>
+            <div class="tag">System Integration</div>
+            <div class="tag">Testing & QA</div>
+            <div class="tag">Deployment</div>
+            <div class="tag">Training</div>
+            <div class="tag">Post-Deployment Support</div>
+        </div>
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Technology Ecosystem</h3>
+
+        <p>
+            YKPL works with a range of global technology providers and technology
+            partners to deliver enterprise-grade ICT solutions in Bhutan.
+        </p>
+
+        <div class="tag-group">
+            <div class="tag">Microsoft</div>
+            <div class="tag">Hewlett Packard Enterprise</div>
+            <div class="tag">Lenovo</div>
+            <div class="tag">VMware</div>
+            <div class="tag">Red Hat</div>
+            <div class="tag">Fortinet</div>
+            <div class="tag">Palo Alto Networks</div>
+            <div class="tag">Veeam</div>
+            <div class="tag">Acronis</div>
+            <div class="tag">Poly</div>
+            <div class="tag">Logitech</div>
+        </div>
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Experience & Market Position</h3>
+
+        <p>
+            With more than two decades of experience in Bhutan, YKPL combines local
+            technical expertise with global technology partnerships to deliver
+            mission-critical ICT systems. The company has more than 30 professionals
+            supporting implementation, troubleshooting, maintenance and operational
+            support.
+        </p>
+
+        <div class="tag-group">
+            <div class="tag">20+ Years Experience</div>
+            <div class="tag">30+ Professionals</div>
+            <div class="tag">Local Technical Team</div>
+            <div class="tag">Mission-Critical Systems</div>
+            <div class="tag">Secure & Scalable Architecture</div>
+            <div class="tag">Long-Term Support</div>
+        </div>
+    </div>
+
+
+    <div class="contact-section">
+        <h3>Get in Touch</h3>
+
+        <div class="contact-details">
+            <strong>Company:</strong> Yang Khor Private Limited (YKPL)<br>
+            <strong>Address:</strong> 3rd Floor, NPPF Housing Colony,
+            Rabten Lam, Thimphu 11001, Bhutan<br>
+            <strong>Email:</strong> info@yangkhor.com<br>
+            <strong>Phone:</strong> +975-02-335378<br>
+            <strong>Mobile:</strong> +975-17111567<br>
+            <strong>Website:</strong> www.yangkhor.com<br>
+            <strong>Business Inquiry:</strong> Nermit Lepcha<br>
+            <strong>Inquiry Email:</strong> nermit.lepcha@yangkhor.com
+        </div>
+    </div>
+
+</div>
+
+<div class="page company-page">
+
+    <div class="company-header">
+        <div class="company-info-left">
+            <h1>Bhutan NDI</h1>
+            <div class="company-meta">
+                <span><strong>Category:</strong> Digital Identity & Trust Services</span>
+                <span><strong>Organization:</strong> A DHI Company</span>
+                <span><strong>Focus:</strong> Digital Identity & Secure Digital Services</span>
+            </div>
+        </div>
+
+        <div class="company-logo-placeholder">
+            <img src="Image/22.png" alt="Bhutan NDI Logo">
+        </div>
+    </div>
+
+
+    <div class="company-overview">
+        <h2>Company Overview</h2>
+
+        <p>
+            Bhutan NDI is the National Digital Identity of the Kingdom of Bhutan,
+            providing people and organisations with a safe, simple and trusted way
+            to prove who they are online. It is built on the Self-Sovereign Identity
+            model, allowing users to keep control of their digital identity and
+            personal data.
+        </p>
+
+        <p>
+            Through a single digital wallet, Bhutan NDI enables trusted digital
+            interactions between individuals, businesses and service providers.
+            Its solutions help reduce fraud, eliminate paperwork and make digital
+            services faster, safer and more convenient.
+        </p>
+    </div>
+
+
+    <div class="products-section">
+        <h2>Products & Services</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <div class="product-icon">📱</div>
+                <h3>NDI Wallet App</h3>
+                <p>
+                    A secure mobile wallet where users can store, manage and share
+                    verified digital credentials while maintaining control over
+                    what information they share and with whom.
+                </p>
+                <div class="product-meta">
+                    <strong>Platform:</strong> Android & iOS
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🔎</div>
+                <h3>Mobile Verifier</h3>
+                <p>
+                    Enables organisations and individuals to verify digital
+                    credentials instantly and confirm whether credentials are
+                    genuine and valid.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Credential Verification
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">👤</div>
+                <h3>Biometric Verification</h3>
+                <p>
+                    Uses live face verification to confirm that the right person
+                    is present, providing an additional layer of security for
+                    sensitive transactions and services.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Identity Verification
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🎓</div>
+                <h3>Verifiable Credential Issuance</h3>
+                <p>
+                    Enables organisations to issue official digital credentials
+                    such as memberships, licences and certificates directly to
+                    a user's NDI wallet.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Digital Credentials
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">✅</div>
+                <h3>Consent Based Authentication</h3>
+                <p>
+                    Allows users to authenticate or share information only after
+                    providing explicit approval, keeping users in control of
+                    their personal data.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Privacy & Consent
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🔢</div>
+                <h3>In-App OTP</h3>
+                <p>
+                    Generates one-time passwords directly inside the NDI application,
+                    providing a secure alternative to SMS-based authentication.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Secure Authentication
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🪪</div>
+                <h3>eKYC</h3>
+                <p>
+                    Enables businesses to verify customers online using their
+                    digital credentials, reducing manual form filling and
+                    document-based identity verification.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Digital Onboarding
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">🔐</div>
+                <h3>Passwordless Login</h3>
+                <p>
+                    Allows users to securely sign in to websites and digital
+                    services by approving login requests through their NDI wallet,
+                    eliminating the need for traditional passwords.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Passwordless Authentication
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">✍️</div>
+                <h3>Digital Signature Platform</h3>
+                <p>
+                    Provides secure digital signing of documents where each
+                    signature is linked to the signer's verified identity,
+                    enabling trusted and legally recognised digital transactions.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Digital Signatures
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-icon">💬</div>
+                <h3>P2P Chat Service</h3>
+                <p>
+                    Provides secure person-to-person and organisation-to-organisation
+                    messaging for trusted digital communication.
+                </p>
+                <div class="product-meta">
+                    <strong>Focus:</strong> Secure Messaging
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="info-section">
+        <h3>Areas of Expertise</h3>
+
+        <div class="tag-group">
+            <div class="tag tech-erp">
+                Self-Sovereign Identity
+            </div>
+
+            <div class="tag tech-erp">
+                Decentralised Digital Identity
+            </div>
+
+            <div class="tag tech-erp">
+                Verifiable Credentials
+            </div>
+
+            <div class="tag tech-erp">
+                Digital Trust Services
+            </div>
+
+            <div class="tag tech-erp">
+                Digital Onboarding
+            </div>
+
+            <div class="tag tech-erp">
+                eKYC
+            </div>
+
+            <div class="tag tech-erp">
+                Passwordless Authentication
+            </div>
+
+            <div class="tag tech-erp">
+                Digital Signatures
+            </div>
+
+            <div class="tag tech-erp">
+                Private Messaging
+            </div>
+
+            <div class="tag tech-erp">
+                Privacy-by-Design
+            </div>
+
+            <div class="tag tech-erp">
+                Personal Data Protection
+            </div>
+
+            <div class="tag tech-erp">
+                National-Scale Digital Identity
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+        <div class="info-section">
+            <h3>Key Capabilities</h3>
+
+            <div class="tag-group">
+                <div class="tag">Digital Identity</div>
+                <div class="tag">Identity Verification</div>
+                <div class="tag">Credential Issuance</div>
+                <div class="tag">Authentication</div>
+                <div class="tag">eKYC</div>
+                <div class="tag">Biometric Verification</div>
+                <div class="tag">Digital Signatures</div>
+                <div class="tag">Secure Messaging</div>
+                <div class="tag">Data Privacy</div>
+                <div class="tag">Digital Trust</div>
+            </div>
+        </div>
+
+
+        <div class="info-section">
+            <h3>Target Markets</h3>
+
+            <div class="tag-group">
+                <div class="tag">Government</div>
+                <div class="tag">Banking & Finance</div>
+                <div class="tag">Telecommunications</div>
+                <div class="tag">Healthcare</div>
+                <div class="tag">Education</div>
+                <div class="tag">Insurance</div>
+                <div class="tag">Fintech</div>
+                <div class="tag">E-Commerce</div>
+                <div class="tag">Enterprise</div>
+                <div class="tag">Workforce</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Digital Identity Solutions</h3>
+
+        <p>
+            Bhutan NDI provides digital identity and trust infrastructure that
+            supports secure interactions between individuals, organisations,
+            businesses and service providers.
+        </p>
+
+        <div class="tag-group">
+            <div class="tag">Digital Identity</div>
+            <div class="tag">Digital Wallet</div>
+            <div class="tag">Credential Issuance</div>
+            <div class="tag">Credential Verification</div>
+            <div class="tag">Authentication</div>
+            <div class="tag">Biometric Verification</div>
+            <div class="tag">eKYC</div>
+            <div class="tag">Digital Signatures</div>
+            <div class="tag">Secure Communication</div>
+            <div class="tag">Digital Trust Infrastructure</div>
+        </div>
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Key Value Proposition</h3>
+
+        <div class="tag-group">
+            <div class="tag">User-Controlled Identity</div>
+            <div class="tag">Privacy by Design</div>
+            <div class="tag">Strong Security</div>
+            <div class="tag">Trusted Credentials</div>
+            <div class="tag">Legally Recognised</div>
+            <div class="tag">Fast & Paperless</div>
+            <div class="tag">Open Standards</div>
+            <div class="tag">Interoperable</div>
+            <div class="tag">National-Scale Deployment</div>
+        </div>
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Industry Applications</h3>
+
+        <p>
+            Bhutan NDI's digital identity infrastructure can support secure
+            digital interactions across multiple sectors, including financial
+            services, public services, telecommunications, healthcare,
+            education, insurance, fintech, e-commerce and enterprise workforce
+            services.
+        </p>
+    </div>
+
+
+    <div class="info-section" style="margin-top: 20px;">
+        <h3>Digital Identity Infrastructure</h3>
+
+        <p>
+            Bhutan NDI is built on open global identity standards and the
+            Self-Sovereign Identity model. Its infrastructure is designed to
+            support trusted verification, credential management, authentication
+            and digital trust at national scale.
+        </p>
+
+        <div class="tag-group">
+            <div class="tag">Self-Sovereign Identity</div>
+            <div class="tag">Open Standards</div>
+            <div class="tag">Interoperability</div>
+            <div class="tag">Privacy Protection</div>
+            <div class="tag">Secure Authentication</div>
+            <div class="tag">Verifiable Credentials</div>
+            <div class="tag">National Digital Identity</div>
+        </div>
+    </div>
+
+
+    <div class="contact-section">
+        <h3>Get in Touch</h3>
+
+        <div class="contact-details">
+            <strong>Organisation:</strong> Bhutan NDI - A DHI Company<br>
+            <strong>Focal Person:</strong> Namgay Wangmo<br>
+            <strong>Designation:</strong> Analyst<br>
+            <strong>Email:</strong> namgaywangmo@bhutanndi.bt<br>
+            <strong>Mobile:</strong> +975 17804376<br>
+            <strong>Toll-free:</strong> 1199<br>
+            <strong>Website:</strong> www.bhutanndi.com
+        </div>
+    </div>
+
+</div>
 
 <div class="page company-page">
     <div class="company-header">
@@ -3196,10 +3870,362 @@
     </div>
 </div>
 
-
-
 <!-- ========== COMPANY DIRECTORY INDEX ========== -->
 <div class="page index-page">
+    <h1>Company Directory</h1>
+    
+    <div class="index-section">
+        <h2>All Companies</h2>
+        <table class="index-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Company Name</th>
+                    <th>Category</th>
+                    <th>Primary Sector</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>aBit Private Limited</td><td>IT Company</td><td>Retail & Service</td></tr>
+                <tr><td>2</td><td>Altiora</td><td>Startup</td><td>Digital Content</td></tr>
+                <tr><td>3</td><td>Athang Pvt Ltd</td><td>IT Company</td><td>Enterprise ERP</td></tr>
+                <tr><td>4</td><td>ChainZeeper</td><td>IT Company</td><td>Blockchain</td></tr>
+                <tr><td>5</td><td>Dragon Coders Private Limited</td><td>IT Company</td><td>Retail & Hospitality</td></tr>
+                <tr><td>6</td><td>Fungi Flow Ecosystem</td><td>Startup</td><td>Agriculture</td></tr>
+                <tr><td>7</td><td>Genexia</td><td>Startup</td><td>Tax Technology</td></tr>
+                <tr><td>8</td><td>Green E-Integrated Pvt. Ltd. (GEIPL)</td><td>IT Company</td><td>Gamification & Apps</td></tr>
+                <tr><td>9</td><td>Host Your Tour</td><td>IT Company</td><td>Tourism</td></tr>
+                <tr><td>10</td><td>Innovates</td><td>IT Company</td><td>Retail & ERP</td></tr>
+                <tr><td>11</td><td>Jaggle AI Private Limited</td><td>Startup</td><td>Project Management</td></tr>
+                <tr><td>12</td><td>Light WebX Private Limited</td><td>Startup</td><td>Web/Marketing</td></tr>
+                <tr><td>13</td><td>NGN Technologies Pvt. Ltd</td><td>IT Company</td><td>Enterprise ERP</td></tr>
+                <tr><td>14</td><td>NoMind</td><td>Startup</td><td>Finance/All</td></tr>
+                <tr><td>15</td><td>NOVANA</td><td>Startup</td><td>Governance</td></tr>
+                <tr><td>16</td><td>NUK 9 PRIVATE LIMITED</td><td>Cybersecurity (FDI)</td><td>Enterprise Security</td></tr>
+                <tr><td>17</td><td>Parkingbt Tech Team</td><td>Startup</td><td>Transportation</td></tr>
+                <tr><td>18</td><td>Robotics & IoT Training Institute</td><td>IT Company</td><td>Education</td></tr>
+                <tr><td>19</td><td>Secure Link Services Bhutan Pvt. Ltd</td><td>IT Company</td><td>Enterprise</td></tr>
+                <tr><td>20</td><td>Thimphu TechPark Limited</td><td>IT Company</td><td>Enterprise Automation</td></tr>
+                <tr><td>21</td><td>VIHelp</td><td>Startup</td><td>Assistive Tech</td></tr>
+                <tr><td>22</td><td>Yeti Pulse</td><td>IT Company</td><td>Retail</td></tr>
+                <tr><td>23</td><td>Zealous Systems</td><td>IT Company</td><td>Tourism & Retail</td></tr>
+
+                <!-- NEW COMPANIES -->
+                <tr><td>24</td><td>Yang Khor Private Limited</td><td>IT Company</td><td>ICT Solutions & Systems Integration</td></tr>
+                <tr><td>25</td><td>Bhutan NDI</td><td>Digital Identity Platform</td><td>Digital Identity & Trust</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- ========== TECHNOLOGY INDEX ========== -->
+<div class="page index-page">
+    <h1>Technology Index</h1>
+
+    <div class="index-section">
+        <h2>Artificial Intelligence & Machine Learning</h2>
+        <ul class="index-list">
+            <li>Jaggle AI (Project Management)</li>
+            <li>Light WebX (Website Builder)</li>
+            <li>VIHelp (Assistive Tech)</li>
+            <li>NOVANA (Governance)</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Point-of-Sale & Retail</h2>
+        <ul class="index-list">
+            <li>aBit Private Limited</li>
+            <li>Dragon Coders</li>
+            <li>Innovates</li>
+            <li>Thimphu TechPark</li>
+            <li>Yeti Pulse</li>
+            <li>Zealous Systems</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Enterprise Resource Planning (ERP)</h2>
+        <ul class="index-list">
+            <li>Athang Pvt Ltd</li>
+            <li>Innovates</li>
+            <li>NGN Technologies</li>
+            <li>Thimphu TechPark</li>
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Cybersecurity & Governance</h2>
+        <ul class="index-list">
+            <li>NUK 9 PRIVATE LIMITED</li>
+            <li>NOVANA (Governance)</li>
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Cloud & Infrastructure</h2>
+        <ul class="index-list">
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Networking & Systems Integration</h2>
+        <ul class="index-list">
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Digital Identity & Authentication</h2>
+        <ul class="index-list">
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Digital Trust & Verifiable Credentials</h2>
+        <ul class="index-list">
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Digital Signatures & Secure Authentication</h2>
+        <ul class="index-list">
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>IoT & Smart Technology</h2>
+        <ul class="index-list">
+            <li>Fungi Flow Ecosystem (Agriculture)</li>
+            <li>Robotics & IoT Training Institute</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Blockchain & Distributed Systems</h2>
+        <ul class="index-list">
+            <li>ChainZeeper</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Gamification & Interactive Apps</h2>
+        <ul class="index-list">
+            <li>Green E-Integrated Pvt. Ltd. (GEIPL)</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>E-Commerce & Digital Platforms</h2>
+        <ul class="index-list">
+            <li>Dragon Coders (Yalula)</li>
+            <li>Zealous Systems (Buy&Sell)</li>
+            <li>Light WebX (Website Builder)</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Tourism & Hospitality Tech</h2>
+        <ul class="index-list">
+            <li>Host Your Tour</li>
+            <li>Zealous Systems (eKor)</li>
+            <li>Dragon Coders</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Transportation & Mobility</h2>
+        <ul class="index-list">
+            <li>Parkingbt Tech Team</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Assistive Technology</h2>
+        <ul class="index-list">
+            <li>VIHelp (Visually Impaired Support)</li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- ========== SECTOR INDEX ========== -->
+<div class="page index-page">
+    <h1>Sector Index</h1>
+
+    <div class="index-section">
+        <h2>Tourism & Hospitality</h2>
+        <ul class="index-list">
+            <li>Dragon Coders</li>
+            <li>Host Your Tour</li>
+            <li>Zealous Systems</li>
+            <li>Innovates</li>
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Retail & Wholesale Trade</h2>
+        <ul class="index-list">
+            <li>aBit Private Limited</li>
+            <li>Dragon Coders</li>
+            <li>Innovates</li>
+            <li>Thimphu TechPark</li>
+            <li>Yeti Pulse</li>
+            <li>Zealous Systems</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Finance & Banking</h2>
+        <ul class="index-list">
+            <li>NoMind (All sectors)</li>
+            <li>NUK 9 PRIVATE LIMITED</li>
+            <li>Thimphu TechPark</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Government & Public Administration</h2>
+        <ul class="index-list">
+            <li>Jaggle AI</li>
+            <li>NOVANA</li>
+            <li>Thimphu TechPark</li>
+            <li>Genexia</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Education & Training</h2>
+        <ul class="index-list">
+            <li>Robotics & IoT Training Institute</li>
+            <li>NOVANA</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Agriculture & Agribusiness</h2>
+        <ul class="index-list">
+            <li>Fungi Flow Ecosystem</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Manufacturing & Industry</h2>
+        <ul class="index-list">
+            <li>Athang Pvt Ltd</li>
+            <li>NGN Technologies</li>
+            <li>Secure Link Services Bhutan</li>
+            <li>Thimphu TechPark</li>
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Healthcare & Social Services</h2>
+        <ul class="index-list">
+            <li>VIHelp (Assistive Technology)</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Transportation & Mobility</h2>
+        <ul class="index-list">
+            <li>Parkingbt Tech Team</li>
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Digital Marketing & Content</h2>
+        <ul class="index-list">
+            <li>Altiora (OpenBlog)</li>
+            <li>Light WebX</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Blockchain & Cryptocurrency</h2>
+        <ul class="index-list">
+            <li>ChainZeeper</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Digital Identity & Trust</h2>
+        <ul class="index-list">
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Telecommunications</h2>
+        <ul class="index-list">
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Insurance & Microfinance</h2>
+        <ul class="index-list">
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Legal & Judicial Services</h2>
+        <ul class="index-list">
+            <li>Yang Khor Private Limited</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Enterprise & Corporate Services</h2>
+        <ul class="index-list">
+            <li>Athang Pvt Ltd</li>
+            <li>Innovates</li>
+            <li>NGN Technologies</li>
+            <li>NoMind</li>
+            <li>Thimphu TechPark</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+
+    <div class="index-section">
+        <h2>Multi-Sector / Enterprise-Wide</h2>
+        <ul class="index-list">
+            <li>Athang Pvt Ltd</li>
+            <li>Innovates</li>
+            <li>NGN Technologies</li>
+            <li>NoMind</li>
+            <li>Thimphu TechPark</li>
+            <li>Yang Khor Private Limited</li>
+            <li>Bhutan NDI</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ========== COMPANY DIRECTORY INDEX ========== -->
+<!-- <div class="page index-page">
     <h1>Company Directory</h1>
     
     <div class="index-section">
@@ -3242,7 +4268,7 @@
     </div>
 </div>
 
-<!-- ========== TECHNOLOGY INDEX ========== -->
+
 <div class="page index-page">
     <h1>Technology Index</h1>
 
@@ -3342,7 +4368,7 @@
 </div>
 
 <!-- ========== SECTOR INDEX ========== -->
-<div class="page index-page">
+<!-- <div class="page index-page">
     <h1>Sector Index</h1>
 
     <div class="index-section">
@@ -3450,7 +4476,7 @@
             <li>Thimphu TechPark</li>
         </ul>
     </div>
-</div>
+</div> -->
 
 
 <!-- ========== CLOSING PAGE ========== -->
