@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -4354,5 +4354,617 @@
     </div>
 </div>
 
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhutan ICT Industry – Digital Catalogue 2026</title>
+<style>
+:root{
+  --bg:#050b17;--bg2:#08142a;--panel:rgba(14,28,56,.55);--line:rgba(80,200,255,.18);
+  --cyan:#38d9ff;--blue:#3b82ff;--violet:#8b5cf6;--lime:#5af2b0;--amber:#ffc857;--text:#e6f1ff;--mute:#8da4c4;
+  --glow:0 0 24px rgba(56,217,255,.25);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{color:inherit}
+#bg{position:fixed;inset:0;z-index:-2;width:100%;height:100%}
+.gridfx{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(56,217,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(56,217,255,.045) 1px,transparent 1px);
+  background-size:48px 48px;mask-image:radial-gradient(circle at 50% 30%,#000 10%,transparent 75%)}
+#glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:-1;left:0;top:0;
+  background:radial-gradient(circle,rgba(56,217,255,.14),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--violet));z-index:100;box-shadow:0 0 12px var(--cyan)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,48px);
+  background:rgba(5,11,23,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{font-weight:800;letter-spacing:2px;font-size:13px;display:flex;align-items:center;gap:10px}
+.brand i{width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+nav ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap}
+nav a.tab{display:block;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 14px;border-radius:20px;color:var(--mute);border:1px solid transparent;transition:.25s}
+nav a.tab:hover,nav a.tab.on{color:#fff;border-color:var(--line);background:rgba(56,217,255,.08);box-shadow:var(--glow)}
+@keyframes pulse{50%{opacity:.3;transform:scale(.7)}}
+
+/* HERO */
+.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative}
+.hero-in{max-width:960px;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:30px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;
+  color:#d9f7ff;border:1px solid rgba(56,217,255,.35);background:rgba(56,217,255,.07);margin-bottom:28px}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+h1.title{font-size:clamp(44px,8vw,96px);font-weight:900;line-height:1;letter-spacing:-2px;
+  background:linear-gradient(90deg,#fff,#aef0ff 40%,var(--cyan) 70%,var(--violet));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.sub{font-size:clamp(16px,2.4vw,24px);font-weight:300;margin:18px 0 8px;color:rgba(255,255,255,.88)}
+.typer{font-family:Consolas,'Courier New',monospace;color:var(--lime);font-size:clamp(14px,2vw,18px);min-height:28px}
+.typer::after{content:"▍";animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-stats{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:40px 0 32px}
+.stat{min-width:150px;padding:20px 26px;border-radius:16px;background:var(--panel);border:1px solid var(--line);backdrop-filter:blur(8px);transition:.3s}
+.stat:hover{transform:translateY(-6px);box-shadow:var(--glow);border-color:rgba(56,217,255,.5)}
+.stat b{display:block;font-size:40px;font-weight:800;color:var(--cyan);font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute)}
+.cta{display:inline-block;padding:14px 34px;border-radius:30px;text-decoration:none;font-weight:600;letter-spacing:1px;color:#031020;
+  background:linear-gradient(90deg,var(--cyan),var(--lime));box-shadow:0 0 30px rgba(56,217,255,.4);transition:.3s;border:0;cursor:pointer;font-size:14px}
+.cta:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 50px rgba(56,217,255,.7)}
+.orbit{position:absolute;left:50%;top:50%;border:1px dashed rgba(56,217,255,.2);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:1}
+.orbit i{position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+.o1{width:560px;height:560px;animation:spin 28s linear infinite}
+.o2{width:820px;height:820px;animation:spin 46s linear infinite reverse}.o2 i{background:var(--violet);box-shadow:0 0 14px var(--violet)}
+.o3{width:1100px;height:1100px;animation:spin 70s linear infinite}.o3 i{background:var(--lime);box-shadow:0 0 14px var(--lime)}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.scroll{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:3px;color:var(--mute);animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+
+/* SECTIONS */
+section.view{padding:70px clamp(16px,4vw,56px);max-width:1360px;margin:0 auto}
+.sec-h{margin-bottom:34px}
+.sec-h small{font-family:Consolas,monospace;color:var(--cyan);letter-spacing:3px;font-size:12px}
+.sec-h h2{font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-1px;margin-top:6px}
+.sec-h p{color:var(--mute);max-width:720px;margin-top:8px}
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;backdrop-filter:blur(8px);transition:.3s;position:relative;overflow:hidden}
+.card:hover{border-color:rgba(56,217,255,.5);box-shadow:var(--glow);transform:translateY(-4px)}
+.card h3{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+.card p{font-size:14px;color:#c4d4ec}
+.disc{margin-top:18px;padding:18px 22px;border-left:3px solid var(--amber);background:rgba(255,200,87,.06);border-radius:8px;font-size:13px;color:#d9c9a0}
+
+/* CONTROLS */
+.controls{display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.search{position:relative}
+.search input{width:100%;padding:16px 20px 16px 50px;border-radius:14px;background:rgba(10,22,44,.8);border:1px solid var(--line);color:var(--text);font-size:15px;outline:none;transition:.3s}
+.search input:focus{border-color:var(--cyan);box-shadow:var(--glow)}
+.search::before{content:"⌕";position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--cyan)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chips label{font-family:Consolas,monospace;font-size:11px;letter-spacing:2px;color:var(--mute);margin-right:6px;text-transform:uppercase}
+.chip{cursor:pointer;padding:7px 14px;border-radius:20px;font-size:12px;border:1px solid var(--line);background:rgba(14,28,56,.5);color:#b9ccea;transition:.25s;user-select:none}
+.chip:hover{border-color:var(--cyan);color:#fff}
+.chip.on{background:linear-gradient(90deg,rgba(56,217,255,.25),rgba(139,92,246,.25));border-color:var(--cyan);color:#fff;box-shadow:var(--glow)}
+.count{font-family:Consolas,monospace;font-size:12px;color:var(--mute)}
+.count b{color:var(--lime)}
+
+/* COMPANY GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.co{cursor:pointer;perspective:900px}
+.co-in{height:100%;background:linear-gradient(160deg,rgba(18,36,72,.75),rgba(8,18,38,.75));border:1px solid var(--line);border-radius:18px;padding:22px;
+  transition:transform .15s ease-out,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;transform-style:preserve-3d}
+.co-in::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(56,217,255,.22),transparent 55%);opacity:0;transition:.3s}
+.co:hover .co-in{border-color:rgba(56,217,255,.6);box-shadow:0 10px 40px rgba(0,0,0,.4),var(--glow)}
+.co:hover .co-in::before{opacity:1}
+.co-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;position:relative}
+.logo{width:84px;height:56px;border-radius:10px;background:#f2f6fb;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;color:#0b3d91;font-weight:800;font-size:18px}
+.logo img{max-width:92%;max-height:88%;object-fit:contain}
+.idx{font-family:Consolas,monospace;font-size:11px;color:var(--mute)}
+.co h3{font-size:18px;line-height:1.25;position:relative}
+.cat{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--lime);margin:4px 0 10px;position:relative}
+.co p{font-size:13px;color:#b5c7e3;position:relative;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;position:relative}
+.tg{font-size:10.5px;padding:3px 10px;border-radius:12px;border:1px solid rgba(56,217,255,.3);background:rgba(56,217,255,.07);color:#bfeeff}
+.tg.v{border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.1);color:#d9ccff}
+.open{margin-top:16px;font-size:12px;color:var(--cyan);letter-spacing:1px;position:relative}
+.open span{display:inline-block;transition:.3s}.co:hover .open span{transform:translateX(6px)}
+.pending{opacity:.55;cursor:default}.pending .open{color:var(--mute)}
+.empty{text-align:center;padding:60px;color:var(--mute);display:none}
+
+/* MODAL */
+#modal{position:fixed;inset:0;z-index:200;display:none;align-items:flex-start;justify-content:center;padding:4vh 16px;background:rgba(2,6,14,.82);backdrop-filter:blur(10px);overflow-y:auto}
+#modal.show{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}}
+.sheet{width:min(1040px,100%);background:linear-gradient(160deg,#0c1a36,#07101f);border:1px solid rgba(56,217,255,.35);border-radius:22px;box-shadow:0 30px 100px rgba(0,0,0,.7),var(--glow);animation:rise .4s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+@keyframes rise{from{transform:translateY(40px) scale(.97);opacity:0}}
+.sh-head{padding:30px 34px;display:flex;gap:22px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);position:relative;
+  background:linear-gradient(90deg,rgba(56,217,255,.1),rgba(139,92,246,.1))}
+.sh-head .logo{width:130px;height:76px}
+.sh-head h2{font-size:clamp(22px,3.4vw,34px);line-height:1.15}
+.meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--mute);margin-top:6px}
+.meta b{color:var(--cyan);font-weight:600}
+.x{position:absolute;right:18px;top:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;cursor:pointer;font-size:18px;transition:.3s}
+.x:hover{background:var(--cyan);color:#031020;transform:rotate(90deg)}
+.sh-body{padding:30px 34px}
+.blk{margin-bottom:28px}
+.blk>h4{font-family:Consolas,monospace;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.blk>h4::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.blk p{font-size:14.5px;color:#c9d9f0}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.pr{padding:18px;border-radius:14px;background:rgba(14,28,56,.6);border:1px solid var(--line);transition:.3s;opacity:0;animation:up .5s forwards}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pr:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:var(--glow)}
+.pr .ic{font-size:30px;filter:drop-shadow(0 0 8px rgba(56,217,255,.5))}
+.pr h5{font-size:15px;margin:8px 0 6px}
+.pr p{font-size:12.5px;color:#a9bddb}
+.pr small{display:block;margin-top:10px;font-size:11px;color:var(--lime)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.ul{list-style:none}.ul li{padding:7px 0 7px 22px;position:relative;font-size:13.5px;color:#c4d4ec;border-bottom:1px dashed rgba(255,255,255,.06)}
+.ul li::before{content:"▹";position:absolute;left:0;color:var(--cyan)}
+.contact{padding:22px 26px;border-radius:16px;background:linear-gradient(135deg,rgba(59,130,255,.25),rgba(139,92,246,.22));border:1px solid rgba(56,217,255,.35)}
+.crow{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;flex-wrap:wrap}
+.crow:last-child{border:0}.crow em{font-style:normal;color:var(--mute);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;min-width:110px}
+.crow span{flex:1;word-break:break-word}
+.crow a{color:#fff;text-decoration:none;border-bottom:1px dotted var(--cyan)}
+.cp{cursor:pointer;font-size:11px;padding:4px 12px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;transition:.2s}
+.cp:hover{background:var(--cyan);color:#031020}
+.nav2{display:flex;justify-content:space-between;padding:16px 34px;border-top:1px solid var(--line);background:rgba(0,0,0,.2)}
+.nav2 button{background:none;border:1px solid var(--line);color:#fff;padding:9px 20px;border-radius:20px;cursor:pointer;font-size:12px;letter-spacing:1px;transition:.25s}
+.nav2 button:hover{border-color:var(--cyan);box-shadow:var(--glow)}
+
+/* DIRECTORY */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+th{padding:14px 16px;text-align:left;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);background:rgba(56,217,255,.07);cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{background:rgba(56,217,255,.14)}
+td{padding:13px 16px;border-top:1px solid rgba(255,255,255,.06);color:#c4d4ec}
+tbody tr{transition:.2s}tbody tr:hover{background:rgba(56,217,255,.08)}
+td:nth-child(2){font-weight:600;color:#fff}
+.lnk{cursor:pointer}.lnk:hover td:nth-child(2){color:var(--cyan)}
+
+/* INDEX */
+.ix{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.ix .card h3{color:#fff;font-size:14px;letter-spacing:0;text-transform:none;display:flex;justify-content:space-between}
+.ix .card h3 span{color:var(--lime);font-family:Consolas,monospace}
+.ix .mini{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.mini a{font-size:12px;text-decoration:none;padding:4px 11px;border-radius:12px;background:rgba(56,217,255,.08);border:1px solid rgba(56,217,255,.25);color:#cfefff;transition:.2s;cursor:pointer}
+.mini a:hover{background:var(--cyan);color:#031020}
+
+footer{margin-top:60px;padding:60px 24px 40px;text-align:center;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(56,217,255,.05))}
+footer h2{font-size:clamp(26px,4vw,44px);font-weight:800;background:linear-gradient(90deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+footer p{max-width:640px;margin:16px auto;color:var(--mute);font-size:14px}
+.gt{display:inline-block;margin:18px 0;padding:14px 22px;background:#f2f6fb;border-radius:14px;transition:.3s}
+.gt:hover{transform:scale(1.06);box-shadow:var(--glow)}
+.gt img{width:140px;display:block}
+.fine{font-size:11px;color:var(--mute);letter-spacing:1px;margin-top:20px}
+
+.rev{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rev.in{opacity:1;transform:none}
+.view{display:none}.view.act{display:block;animation:fade .5s}
+@media(max-width:700px){nav{flex-direction:column}.sh-head,.sh-body{padding:22px}.o3{display:none}.nav2{padding:14px 22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rev{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div class="gridfx"></div><div id="glow"></div><div id="progress"></div>
+
+<nav>
+  <div class="brand"><i></i>BHUTAN ICT // 2026</div>
+  <ul id="tabs">
+    <li><a class="tab on" href="#home" data-v="home">Home</a></li>
+    <li><a class="tab" href="#companies" data-v="companies">Companies</a></li>
+    <li><a class="tab" href="#directory" data-v="directory">Directory</a></li>
+    <li><a class="tab" href="#indexes" data-v="indexes">Indexes</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<div class="view act" id="v-home">
+  <header class="hero">
+    <div class="orbit o1"><i></i></div><div class="orbit o2"><i></i></div><div class="orbit o3"><i></i></div>
+    <div class="hero-in">
+      <div class="badge">E-Booklet Edition · 19 August 2026 · Thimphu</div>
+      <h1 class="title">BHUTAN ICT<br>INDUSTRY</h1>
+      <p class="sub">IT Products &amp; Digital Services Catalogue</p>
+      <div class="typer" id="typer"></div>
+      <div class="hero-stats">
+        <div class="stat"><b data-n="26">0</b><span>ICT Companies</span></div>
+        <div class="stat"><b data-n="30" data-s="+">0</b><span>Digital Products</span></div>
+        <div class="stat"><b data-n="14">0</b><span>Technology Areas</span></div>
+        <div class="stat"><b data-n="12">0</b><span>Sectors Served</span></div>
+      </div>
+      <button class="cta" onclick="go('companies')">EXPLORE THE CATALOGUE →</button>
+    </div>
+    <div class="scroll">SCROLL ↓</div>
+  </header>
+
+  <section class="view act" style="display:block">
+    <div class="sec-h rev"><small>// 00 — ABOUT</small><h2>About This E-Booklet</h2></div>
+    <div class="about">
+      <div class="card rev"><h3>Purpose</h3><p>A comprehensive overview of Bhutan's ICT industry, showcasing 30+ locally developed or customized digital products and services — an official industry catalogue and reference guide for the technology sector.</p></div>
+      <div class="card rev"><h3>For Whom</h3><p>Government agencies, private companies, SMEs, startups, educational institutions, NGOs, development partners, investors and individuals seeking relevant IT solutions available within Bhutan.</p></div>
+      <div class="card rev"><h3>What You Will Find</h3><p>Company profiles with products, target users, clients, technology capabilities, sector applications and direct contacts — plus indexes organised by company, technology area and sector.</p></div>
+      <div class="card rev"><h3>Local Development</h3><p>A significant share of the solutions are built by Bhutanese teams, reflecting growing innovation in the sector. Some are internationally sourced but customised for the Bhutanese market.</p></div>
+    </div>
+    <div class="disc rev"><b>Disclaimer:</b> Company information, products, users, sectors and services are based on the 2026 ICT products and services data collection. Technology classifications are descriptive and not independent technical certification. For specifications, implementation support or trial access, contact the companies directly.</div>
+
+    <div class="sec-h rev" style="margin-top:70px"><small>// 01 — SNAPSHOT</small><h2>ICT Industry Snapshot – 2026</h2></div>
+    <div class="card rev"><h3>Key Technology Areas</h3><div class="chips" id="snapTech"></div></div>
+    <div class="card rev" style="margin-top:18px"><h3>Sectors Served</h3><div class="chips" id="snapSec"></div></div>
+  </section>
+</div>
+
+<!-- COMPANIES -->
+<div class="view" id="v-companies"><section class="view act" style="display:block">
+  <div class="sec-h"><small>// 02 — PROFILES</small><h2>Company Catalogue</h2><p>Search, filter by technology or sector, then open any card for the full profile. Tip: use ← → inside a profile to move between companies.</p></div>
+  <div class="controls">
+    <div class="search"><input id="q" placeholder="Search companies, products, clients, technologies…" autocomplete="off"></div>
+    <div class="chips" id="fTech"><label>Technology</label></div>
+    <div class="chips" id="fSec"><label>Sector</label></div>
+    <div class="count" id="cnt"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <div class="empty" id="empty">// NO MATCH FOUND — try clearing filters</div>
+</section></div>
+
+<!-- DIRECTORY -->
+<div class="view" id="v-directory"><section class="view act" style="display:block">
+  <div class="sec-h"><small>// 03 — DIRECTORY</small><h2>Company Directory</h2><p>Click a column header to sort. Click a row to open the profile (where available).</p></div>
+  <div class="controls"><div class="search"><input id="dq" placeholder="Filter directory…"></div></div>
+  <div class="tw"><table><thead><tr><th data-k="no">No.</th><th data-k="name">Company</th><th data-k="cat">Category</th><th data-k="sector">Primary Sector</th></tr></thead><tbody id="dbody"></tbody></table></div>
+</section></div>
+
+<!-- INDEXES -->
+<div class="view" id="v-indexes"><section class="view act" style="display:block">
+  <div class="sec-h"><small>// 04 — INDEXES</small><h2>Technology &amp; Sector Index</h2><p>Click any company name to jump straight to its profile.</p></div>
+  <div class="chips" style="margin-bottom:24px"><span class="chip on" data-ix="tech">Technology Index</span><span class="chip" data-ix="sec">Sector Index</span></div>
+  <div class="ix" id="ixgrid"></div>
+</section></div>
+
+<footer>
+  <h2>Bhutan's Digital Future</h2>
+  <p>This e-booklet showcases the innovative solutions and capabilities within Bhutan's growing ICT industry — a commitment to digital transformation, economic development and technological advancement across all sectors of Bhutanese society.</p>
+  <p>For more information about any company featured here, refer to the contact details in each profile or visit their websites.</p>
+  <a class="gt" href="https://tech.gov.bt/" target="_blank" rel="noopener"><img src="Image/logo.png" alt="GovTech Agency" onerror="this.outerHTML='<b style=color:#0b3d91>GovTech Agency</b>'"></a>
+  <div><a href="https://tech.gov.bt/" target="_blank" rel="noopener" style="color:var(--cyan);font-size:13px">Visit GovTech Agency Website →</a></div>
+  <div class="fine">PUBLISHED: 19 AUGUST 2026 · BHUTAN ICT INDUSTRY E-BOOKLET</div>
+</footer>
+
+<div id="modal"><div class="sheet" id="sheet"></div></div>
+
+<script>
+/* ============ DATA ============ */
+const TECH={ai:"Artificial Intelligence",pos:"POS & Retail",erp:"ERP",cyber:"Cybersecurity",cloud:"Cloud & Infrastructure",network:"Networking & Integration",identity:"Digital Identity",fintech:"FinTech & Payments",iot:"IoT & Smart Tech",ecom:"E-Commerce & Platforms",tourism:"Tourism & Hospitality Tech",assistive:"Assistive Technology",govtech:"GovTech & DPI",bizauto:"Business Automation"};
+const SECTORS=["Tourism","Retail","Finance","Government","Education","Healthcare","Agriculture","Telecom","Manufacturing","Hospitality","Enterprise"];
+
+const C=[
+{id:"zealous",name:"Zealous Systems",cat:"IT Company",focus:"Tourism, Retail & Human Resource Management",logo:"Image/image.png",tech:["ecom","pos","tourism"],sec:["Tourism","Retail","Hospitality"],
+ overview:"Zealous Systems is an IT company providing digitalized solutions for travel agencies, retail businesses and organizations in Bhutan. Its portfolio includes tourism management, e-commerce and human resource technology solutions, supporting organizations through locally developed digital platforms.",
+ products:[["✈️","eKor","Comprehensive tourism management platform for travel and tour agencies in Bhutan. Centralizes itinerary management, tour packages, inquiries, reservations, finance, billing and operational reporting.","Implementation: 2025 · Locally Built"],
+ ["🛒","Buy&Sell","E-commerce and retail management solution enabling businesses to manage products, sales and inventory while supporting real-time payment confirmation through integrated banking services.","Implementation: 2024 · Locally Built"],
+ ["👥","HRStation","Human resource management solution supporting organizations in managing HR processes digitally and improving administration of employee and HR activities.","Human Resource Management · Locally Built"]],
+ caps:["E-Commerce","POS Integration","Payment Gateway","Booking Management","Tourism Management","HR Management","Digital HR Processes"],
+ techAreas:["Web Platform","Real-time Integration","Payment Integration","Business Management Systems","Human Resource Technology"],
+ targets:["Travel Agencies","Tour Operators","Retailers","Small Businesses","Organizations","HR Departments","Employers"],
+ lists:[["Current Clients",["Tourism: Yangphel Adventure","Retail: Smart Hubs Electronic, Garden Sales, Space 34, Chhom, and others"]],
+        ["Solution Areas",["eKor: Tourism and travel-management digitalization.","Buy&Sell: E-commerce, retail and payment-enabled business management.","HRStation: Digital human resource management and HR administration."]]],
+ contact:[["Contact Person","Tashi Tobgay"],["Email","tobgay@zealoussystems.com"],["Phone","+975 17125802"]]},
+
+{id:"dragon",name:"Dragon Coders Private Limited",cat:"IT Company",focus:"Retail, Hospitality, E-commerce & Digital Platforms",logo:"Image/1.png",tech:["pos","ecom","tourism"],sec:["Retail","Tourism","Hospitality"],
+ overview:"Dragon Coders is a Bhutanese technology company developing locally focused digital products across retail, tourism, e-commerce, business automation and social connection — tools for sales, inventory, booking, marketplaces, sports-facility reservations and social networking.",
+ products:[["💳","Dragon POS","Cloud-based point-of-sale for Bhutanese businesses to manage sales, inventory, reporting and multi-store operations from one platform.","Retail & Point-of-Sale · Cloud POS"],
+ ["🏨","Ezeeroom","Online booking platform for authentic Bhutanese hotels and accommodation, connecting travellers directly with verified local properties.","Tourism & Hospitality · Online Booking"],
+ ["🛍️","Yalula","Nationwide online marketplace connecting Bhutanese sellers of artisan crafts, ethical goods and everyday products with buyers across the country.","E-Commerce · Multi-Seller Marketplace"],
+ ["📅","Dragon Booking","Sports-facility reservation platform: discover venues, check real-time availability and book instantly.","Business Automation · Sports Booking"],
+ ["🤝","Namkoe","Social-connection app helping people in Bhutan meet others for friendship or relationships via preference-based matching and private messaging.","Digital Platforms · Social App"],
+ ["📦","Zhimpu","Digital solution developed by Dragon Coders and featured within the company's technology portfolio.","Retail & Business Solutions"]],
+ caps:["POS Systems","Inventory Management","E-Commerce","Online Booking","Sports Booking","Digital Marketplaces","Mobile Applications","Social Platforms","Digital Business Automation"],
+ targets:["Retailers","Multi-Outlet Businesses","Hotels & Homestays","Tourism Businesses","Local Sellers","Small Businesses","Sports-Facility Operators","Athletes & Teams","General Public"],
+ lists:[["Product Capabilities",["Dragon POS: Cloud checkout, multi-store and multi-user, inventory tracking, sales and expense reporting, mixed payments, barcode support.","Ezeeroom: Hotel listings, direct online booking, property search across Bhutan.","Yalula: Multi-seller marketplace, mobile app and web storefront, product search, seller onboarding, local delivery partners.","Dragon Booking: Real-time venue availability, instant booking, venue discovery, casual and tournament bookings.","Namkoe: Smart matching, verified profiles, private messaging, nearby and global discovery."]],
+ ["Digital Value",["Digitises sales, inventory and operations for Bhutanese retailers.","Locally built booking channels for tourism and hospitality.","Digital marketplaces for Bhutanese sellers and consumers.","Reduces manual venue scheduling for sports facilities.","Social-connection services with emphasis on privacy and safety."]],
+ ["Notable Clients",["Japan Selections","Nyings Bhutan","Legendary Lounge","Dzongchu Check Mart","Changangkha CFC","KayDee Futsal","Sherubtse Football Ground","Various restaurants and retail establishments"]]],
+ contact:[["Company","Dragon Coders Private Limited"],["Email","info@dcpl.bt"],["Phone","+975 17124535"]]},
+
+{id:"lightwebx",name:"Light WebX Private Limited",cat:"Startup",focus:"AI-Powered Website Building",logo:"Image/2.png",tech:["ai","ecom"],sec:["Tourism","Retail"],
+ overview:"Light WebX is an innovative startup providing AI-powered website building and digital presence solutions for small business owners and entrepreneurs — quick, affordable digital transformation without technical expertise.",
+ products:[["🤖","Sencill AI","AI-powered website builder enabling small business owners to create professional websites and online stores quickly, with automated design optimization and digital marketing integration.","Implementation: 2026 · Locally Built"],
+ ["📊","User Impact","Over 441 users have created 352+ websites using the platform, showing strong adoption among Bhutanese entrepreneurs and small businesses.","Adoption: Strong"]],
+ caps:["AI-Powered Design","No-Code Building","E-Commerce Ready","Marketing Tools"],techAreas:["Artificial Intelligence","Web Platform","SaaS"],
+ targets:["Tourism","Retail","Services","Startups","Freelancers"],lists:[],
+ contact:[["Contact","Bishal Dhakal"],["Email","dhakalbishal930@gmail.com"],["Phone","+975 17959259"]]},
+
+{id:"nuk9",name:"NUK 9 Private Limited",cat:"Cybersecurity (FDI)",focus:"Enterprise Security",logo:"Image/3.png",tech:["cyber"],sec:["Finance","Government","Telecom"],
+ overview:"NUK 9 is a foreign direct investment cybersecurity company with 20+ years of international experience, now offering enterprise-grade security, governance and compliance services to Bhutanese organizations — combining technology, process and people expertise.",
+ products:[["🔒","GRC Compliance-as-a-Service","Governance, Risk and Compliance solutions for regulated industries — managing security policies, risk assessments and regulatory compliance.","Since 2026 (Bhutan)"],
+ ["🛡️","Cyber Command Centre (SOC)","Security Operations Centre providing 24/7 threat monitoring, incident response and cyber defense for corporate and government entities.","Since 2026 (Bhutan)"],
+ ["📚","Certified Training Services","Professional training in cybersecurity, GRC frameworks and risk management for teams and individuals.","Professional Development"]],
+ caps:["Cybersecurity","Risk Management","Compliance","Incident Response"],targets:["Corporates","SMEs","Government","Telecom","Finance"],
+ lists:[["Current Clients",["Royal Monetary Authority (RMA)","Thimphu Bank (TBANK), Bank of Bhutan (BOB)","Bhutan Insurance Limited (BIL)","RICBL, BNBL and other financial institutions"]]],
+ contact:[["Contact","Manoj Adhikari"],["Email","manoj.adhikari@nuk9.in"],["Phone","+975 77102200"],["Note","20+ years international FDI experience"]]},
+
+{id:"selise",name:"SELISE",cat:"Business Automation",focus:"Telecom CPQ & Digital Platforms",logo:"Image/13.png",tech:["bizauto"],sec:["Telecom"],
+ overview:"SELISE is a global digital-platform company with a delivery hub in Bhutan since 2014. SELISE CPQ is a telecom-native platform for complex, high-speed product configuration and quoting for telecom providers and their enterprise clients.",
+ products:[["⚙️","SELISE CPQ","Configure-Price-Quote platform supporting complex product configuration, dynamic pricing and automated quote generation for enterprise telecom sales.","Telecom & Business Automation"]],
+ caps:["Product Configuration","Product Bundling","Dynamic Pricing","Automated Quotation","Fleet Integration","Self-Care Portal Integration","B2B Sales"],
+ targets:["Telecom Providers","CSPs","Enterprise Sales Teams","Partner Sales Teams"],
+ lists:[["Use Case",["A telecom provider configures a multi-site enterprise connectivity bundle and generates an accurate quote in minutes instead of days."]],["Value",["Reduces time and error rate in complex B2B telecom quoting and helps providers move faster on enterprise deals."]]],
+ contact:[["Contact","SELISE Group"],["Email","support@selisegroup.com"],["Phone","+975 2350 106"]]},
+
+{id:"jaggle",name:"Jaggle AI Private Limited",cat:"Startup",focus:"Project Management AI",logo:"Image/4.png",tech:["ai"],sec:["Government"],
+ overview:"Jaggle AI is a Bhutanese startup developing AI-powered project management solutions for government, business and community organizations. Built entirely by Bhutanese developers and currently undergoing government and organizational testing.",
+ products:[["📊","Jaggle AI Platform","Intelligent project management platform for B2G, B2B and B2C. Streamlines project tracking, team collaboration and resource management with AI-assisted workflows.","Implementation: 2025 · Locally Built"],
+ ["🧪","Pilot Programs","Testing with GovTech Agency (18 paid users in a 5-month POC), Loden Foundation and individual users, gathering feedback for market refinement.","Phase: Pilot & Validation"]],
+ caps:["AI Intelligence","Project Tracking","Collaboration","Resource Mgmt"],targets:["B2G (Government)","B2B (Business)","B2C (Community)"],
+ lists:[["Pilot Partners",["GovTech Agency — 18 paid users, 5-month POC","Loden Foundation — product compatibility testing","Individual beta users"]]],
+ contact:[["Founder / Contact","Jigme Tashi Namgyal"],["Email","jtn@jaggle.tech"],["Phone","+975 17619751"]]},
+
+{id:"ngn",name:"NGN Technologies Pvt. Ltd",cat:"IT Company",focus:"Enterprise ERP",logo:"Image/5.png",tech:["erp","pos"],sec:["Manufacturing","Enterprise"],
+ overview:"NGN Technologies specializes in comprehensive ERP solutions for organizations across all sectors. Developed from scratch by Bhutanese developers, the modular ERP enables integrated management of core business functions.",
+ products:[["🏢","NGNERP Suite","Comprehensive ERP including HRMS, Inventory Management, Asset Tracking, POS, Accounting and CRM modules.","Implementation: 2024 · Fully Locally Built"],
+ ["⚙️","Integrated Modules","HR, inventory control, asset management, point-of-sale, financial accounting and CRM in one unified platform.","Scope: Enterprise-wide"]],
+ caps:["HRMS","Inventory Mgmt","POS","Accounting","CRM"],targets:["Any Organization","All Sectors","Enterprises"],
+ lists:[["Development & Status",["The ERP is undergoing internal refinement and testing before commercial deployment, suitable for managing day-to-day operations across all functional areas in an integrated manner."]]],
+ contact:[["Contact","Khemlal Chhetri"],["Email","khemlal.chhetri@ecentric.ngn.bt"],["Phone","+975 17770808"]]},
+
+{id:"techpark",name:"Thimphu TechPark Limited",cat:"IT Company",focus:"Enterprise Solutions",logo:"Image/6.png",tech:["erp","pos","govtech"],sec:["Government","Retail","Finance","Manufacturing","Enterprise"],
+ overview:"Thimphu TechPark is a leading IT solutions provider with a diverse portfolio of locally developed enterprise automation products — from e-governance platforms to retail management and ERP — serving public and private sector organizations across Bhutan.",
+ products:[["🌐","The Gateway","E-governance and digital service delivery platform enabling agencies and public organizations to provide efficient, accessible digital services to citizens.","Since 2024"],
+ ["📋","Yigcha","Document and records management system for organized, secure storage and retrieval of documents and data.","Since 2025"],
+ ["💳","NorPOS","Retail point-of-sale for shops and small enterprises with sales tracking, inventory management and reporting.","Since 2025"],
+ ["🏢","IntegraSuite ERP","ERP built on customized open-source technology, adapted for Bhutanese market requirements and business practices.","Since 2020"]],
+ caps:["E-Governance","Document Mgmt","POS Systems","ERP","Enterprise Automation"],targets:["Government","Public Sector","Private Companies","Retail"],
+ lists:[["Notable Clients",["Bank of Bhutan (BoB), BTL, CDCL, NRDCL, SMCL, STCBL","Departments & Government Corporations (DGPC)","Bhutan NDI Ltd, GMC, DK and various enterprises"]]],
+ contact:[["Contact","Kinley Tshering"],["Email","kt@thimphutechpark.bt"],["Phone","+975 17314743"]]},
+
+{id:"athang",name:"Athang Pvt Ltd",cat:"IT Company",focus:"Enterprise ERP Solutions",logo:"Image/7.png",tech:["erp"],sec:["Manufacturing","Enterprise","Government","Tourism"],
+ overview:"Athang is a Bhutanese IT company providing locally built ERP solutions for corporate entities, NGOs and government project offices. Their ERP serves all business verticals and sectors.",
+ products:[["🏢","Athang ERP System","Comprehensive ERP platform serving all business verticals; supports corporate, NGO and government project office operations with integrated business management.","Locally Built · All sectors"],
+ ["🌐","Digital Transformation","Helps organizations modernize operations and digitalize processes across all departments, designed for ease of implementation and adaptation.","Business Modernization"]],
+ caps:["Enterprise ERP","Business Integration","All Sectors","Digitalization"],targets:["Private Companies","Corporate","NGOs","Government","Project Offices"],
+ lists:[["Key Clients",["Bhutan Postal (Government)","FCBL — Financial Corporation","Dheyma International Ltd","Handicraft Association","Tourism Sector Organizations","Mining Companies, Manufacturing (Norwang Polymer), and many others"]]],
+ contact:[["Contact","Karma Dhendup (CEO)"],["Email","karma@athang.com"],["Phone","+975 17110988"]]},
+
+{id:"vihelp",name:"VIHelp",cat:"Startup",focus:"Assistive Technology",logo:"Image/8.png",tech:["ai","assistive"],sec:["Healthcare"],
+ overview:"VIHelp is an innovative Bhutanese startup developing AI-powered assistive devices that give real-time guidance and support to visually impaired individuals, combining imported microcontrollers with locally built intelligent software.",
+ products:[["👁️","VIHelp AI Guidance","Real-time AI guidance for visually impaired individuals: environmental awareness, navigation support and object recognition for independence and safety.","Implementation: 2026 · Locally Built"],
+ ["🤝","Community Support","Designed for visually impaired individuals, caregivers and family members. Supports Disabled People's Organizations and social inclusion initiatives.","Inclusive Technology"]],
+ caps:["AI Intelligence","Real-time Guidance","Object Recognition","Navigation Support"],targets:["Visually Impaired","Caregivers","Family Members","DPOs","Disability Organizations"],
+ lists:[["Partners & Institutions",["Disabled People's Organization of Bhutan (Partner)","Muenselling Institute (Support)","Ability Bhutan Society (Collaboration)"]]],
+ contact:[["Contact","Norbu Gyeltshen"],["Email","vihelp.ai@gmail.com"],["Phone","+975 17263821"]]},
+
+{id:"yeti",name:"Yeti Pulse",cat:"IT Company",focus:"Retail POS Solutions",logo:"Image/10.png",tech:["pos"],sec:["Retail"],
+ overview:"Yeti Pulse is a Bhutanese IT company specializing in point-of-sale and retail management. Its locally built YetiPOS manages retail operations for businesses of all sizes across Bhutan.",
+ products:[["💳","YetiPOS","Comprehensive POS and retail management: sales transactions, inventory tracking, customer management and business reporting.","Since 2025 · Locally Built"],
+ ["📊","Business Intelligence","Analytics and reporting giving retailers actionable insights for sales, inventory and customer decisions.","Data-Driven Retail"]],
+ caps:["POS Systems","Inventory Mgmt","Sales Tracking","Analytics"],targets:["Retail","Enterprises","Commercial"],
+ lists:[["Notable Clients",["5050 Enterprise, Goods Mart, Ana Tshongkhang","18+ other retail establishments across Bhutan"]]],
+ contact:[["Contact","Tenzin Dorjee"],["Email","tenzin@yetipos.app"],["Phone","+975 17332248"]]},
+
+{id:"abit",name:"aBit Private Limited",cat:"IT Company",focus:"Retail & Service Solutions",logo:"Image/11.png",tech:["pos"],sec:["Retail"],
+ overview:"aBit is a Bhutanese IT company providing locally built solutions for retail and service industry digitalization, with POS and invoicing systems and real-time business management.",
+ products:[["💳","aBitPOS","POS for retail and wholesale: sales management, inventory control and payment processing.","Launch: March 2026"],
+ ["📄","aBitInvoice","Digital invoicing and billing for service-industry businesses, with 100+ active clients managing transactions and financial records.","Launch: January 2026 · 100+ clients"]],
+ caps:["POS Systems","Invoicing","Billing","Business Mgmt"],targets:["Retail Businesses","Wholesale","Service Industry","SMEs"],
+ lists:[["Adoption & Growth",["aBitInvoice: serving 100+ clients across Bhutan's service sector.","aBitPOS: recently launched, building presence in the retail industry."]]],
+ contact:[["Contact","Bharat Thapa"],["Email","bharat@abit.bt"],["Phone","+975 77101884"]]},
+
+{id:"yangkhor",name:"Yang Khor Private Limited",cat:"ICT Solutions & Systems Integration",focus:"Enterprise Digital Transformation · Est. 2005",logo:"Image/21.png",tech:["erp","cyber","cloud","network"],
+ sec:["Government","Finance","Telecom","Healthcare","Education","Manufacturing","Hospitality","Enterprise"],
+ overview:"Yang Khor Private Limited (YKPL) is a Bhutanese ICT solutions and systems integration company established in 2005, delivering end-to-end digital transformation: enterprise software, cloud, cybersecurity, networking, systems integration, enterprise mobility and managed support. It serves government agencies, regulators, financial institutions, corporations, healthcare, education and private enterprises with bespoke, secure and scalable solutions.",
+ products:[["💻","Enterprise Software Solutions","Bespoke enterprise applications, ERP, CRM, HRM and workflow management systems designed around organizational processes.","Enterprise Applications"],
+ ["☁️","Cloud & Infrastructure","Cloud design, deployment and migration, servers and storage, virtualization, hybrid infrastructure, backup, disaster recovery and optimization.","Cloud & Infrastructure"],
+ ["🔐","Cybersecurity & Data Protection","Security assessment and hardening, endpoint and network security, identity and access management, secure architecture and cyber-resilience.","Cybersecurity"],
+ ["🌐","Networking & Systems Integration","Enterprise network design, secure connectivity, hardware/software integration, data-centre solutions, collaboration systems and monitoring.","Networking & Integration"],
+ ["📱","Enterprise Mobility","Android, iOS and cross-platform apps for mobile workforce enablement, secure remote access and enterprise integration.","Mobile Applications"],
+ ["🛠️","Managed Services & Support","Preventive and corrective maintenance, helpdesk, infrastructure monitoring, SLA-based services, training and knowledge transfer.","Managed ICT Services"]],
+ caps:["Software Development","Systems Integration","Cloud Computing","Cybersecurity","Networking","Enterprise Mobility","Workflow Automation","Data & Reporting","Managed Services","Technical Support"],
+ targets:["Government","Financial Services","Insurance & Microfinance","Public Enterprises","Telecommunications","Healthcare","Education & Research","Legal & Judicial","Corporate Enterprises","Hospitality & Services"],
+ lists:[["Digital Products & Platforms",["Bespoke Enterprise Systems, E-Government Platforms, Financial Sector Solutions, Trade & Regulatory Systems","ERP / CRM / HRM, Web Portals, Mobile Applications, API & Integration Services","Workflow Automation, Data & Reporting, Cloud-Enabled and Managed Digital Services"]],
+ ["Technology Ecosystem",["Microsoft, Hewlett Packard Enterprise, Lenovo, VMware, Red Hat","Fortinet, Palo Alto Networks, Veeam, Acronis, Poly, Logitech"]],
+ ["Experience & Market Position",["20+ years in Bhutan · 30+ professionals · local technical team","Mission-critical systems, secure & scalable architecture, long-term support","Full lifecycle: requirements, architecture, development, integration, testing, deployment, training, post-deployment support"]]],
+ contact:[["Company","Yang Khor Private Limited (YKPL)"],["Address","3rd Floor, NPPF Housing Colony, Rabten Lam, Thimphu 11001, Bhutan"],["Email","info@yangkhor.com"],["Phone","+975-02-335378"],["Mobile","+975-17111567"],["Website","www.yangkhor.com"],["Business Inquiry","Nermit Lepcha"],["Inquiry Email","nermit.lepcha@yangkhor.com"]]},
+
+{id:"ndi",name:"Bhutan NDI",cat:"Digital Identity & Trust Services",focus:"A DHI Company · National Digital Identity",logo:"Image/22.png",tech:["identity","cyber"],sec:["Government","Finance","Telecom","Healthcare","Education","Enterprise"],
+ overview:"Bhutan NDI is the National Digital Identity of the Kingdom of Bhutan, giving people and organisations a safe, simple and trusted way to prove who they are online. Built on the Self-Sovereign Identity model, it lets users keep control of their identity and personal data. Through a single digital wallet it enables trusted interactions between individuals, businesses and service providers — reducing fraud, eliminating paperwork and making digital services faster and safer.",
+ products:[["📱","NDI Wallet App","Secure mobile wallet to store, manage and share verified digital credentials while controlling what is shared and with whom.","Android & iOS"],
+ ["🔎","Mobile Verifier","Lets organisations and individuals instantly verify digital credentials and confirm they are genuine and valid.","Credential Verification"],
+ ["👤","Biometric Verification","Live face verification confirms the right person is present, adding security to sensitive transactions.","Identity Verification"],
+ ["🎓","Verifiable Credential Issuance","Organisations issue official digital credentials — memberships, licences, certificates — directly to a user's NDI wallet.","Digital Credentials"],
+ ["✅","Consent Based Authentication","Users authenticate or share information only after explicit approval, staying in control of personal data.","Privacy & Consent"],
+ ["🔢","In-App OTP","One-time passwords generated inside the NDI app — a secure alternative to SMS authentication.","Secure Authentication"],
+ ["🪪","eKYC","Businesses verify customers online using digital credentials, reducing manual forms and document-based verification.","Digital Onboarding"],
+ ["🔐","Passwordless Login","Sign in to websites and services by approving requests in the NDI wallet — no traditional passwords.","Passwordless Authentication"],
+ ["✍️","Digital Signature Platform","Secure document signing where each signature is linked to the signer's verified identity for trusted, legally recognised transactions.","Digital Signatures"],
+ ["💬","P2P Chat Service","Secure person-to-person and organisation-to-organisation messaging for trusted digital communication.","Secure Messaging"]],
+ caps:["Digital Identity","Identity Verification","Credential Issuance","Authentication","eKYC","Biometric Verification","Digital Signatures","Secure Messaging","Data Privacy","Digital Trust"],
+ targets:["Government","Banking & Finance","Telecommunications","Healthcare","Education","Insurance","Fintech","E-Commerce","Enterprise","Workforce"],
+ lists:[["Key Value Proposition",["User-controlled identity · Privacy by design · Strong security","Trusted credentials · Legally recognised · Fast & paperless","Open standards · Interoperable · National-scale deployment"]],
+ ["Digital Identity Infrastructure",["Built on open global identity standards and the Self-Sovereign Identity model, designed for trusted verification, credential management, authentication and digital trust at national scale."]]],
+ contact:[["Organisation","Bhutan NDI — A DHI Company"],["Focal Person","Namgay Wangmo (Analyst)"],["Email","namgaywangmo@bhutanndi.bt"],["Mobile","+975 17804376"],["Toll-free","1199"],["Website","www.bhutanndi.com"]]},
+
+{id:"fungi",name:"Fungi Flow Ecosystem",cat:"Startup",focus:"AgriTech IoT",logo:"Image/12.png",tech:["iot"],sec:["Agriculture"],
+ overview:"Fungi Flow is an innovative Bhutanese startup developing IoT-based climate control systems for mushroom cultivation, addressing agricultural productivity through automated environmental monitoring and precision farming.",
+ products:[["🍄","IoT Mushroom Cultivation System","Climate-controlled, IoT-enabled system for advanced mushroom farming that monitors and automates temperature, humidity and other factors to optimize yield and quality.","Prototype (Testing) · Locally Built"],
+ ["🌱","Smart Farming Technology","Integrated sensors and automation for precision agriculture, improving productivity, quality and sustainability for small farmers and enterprises.","Validation & Scaling"]],
+ caps:["IoT Monitoring","Climate Control","Automation","Smart Agriculture"],targets:["Mushroom Growers","Farmer Groups","Cooperatives","Agribusiness","Training Centers"],
+ lists:[["Development & Deployment",["Current stage: prototype testing with CEEDEE Ventures (Bhutan Organic Mushroom pilot site).","Next phase: commercial deployment to farmers, cooperatives and mushroom enterprises post-validation."]]],
+ contact:[["Contact","Choezang Dorji (CEO)"],["Company","Fungi Flow Ecosystem"],["Phone","+975 77223567"]]},
+
+{id:"21tech",name:"21 Tech Private Limited",cat:"Digital Solutions & Technology",focus:"Digital Public Infrastructure & Emerging Technologies · Est. 2023",logo:"Image/23.png",tech:["ai","cloud","cyber","identity","fintech","govtech","network"],sec:["Government","Education","Finance"],
+ overview:"21 Tech Private Limited is a Bhutanese technology company delivering secure, scalable and human-centred digital solutions for governments, institutions and businesses. Established in 2023, it specializes in digital public infrastructure, border-management technology, AI, education technology, fintech, enterprise platforms and large-scale systems integration.",
+ products:[["🛂","Border Management System & Automated e-Gates","Integrated border-management platform modernizing immigration at airports, pedestrian terminals and land-border checkpoints.","Border Management & Biometrics"],
+ ["🤖","Project 975 – AI Learning Companion","AI-powered education initiative giving students and teachers personalized support through AI-assisted learning, quizzes, practice activities and curriculum-aligned content.","AI & Education Technology"],
+ ["🎓","Education Management Information System","National-level platform supporting student, teacher, school, examination, academic and education administration.","Education Technology"],
+ ["💳","21Pay – Digital Payment Gateway","Secure transactions, merchant payments, API integration and transaction monitoring.","FinTech & Digital Payments"],
+ ["📊","ORO – Prediction Platform","Technology-enabled prediction platform capturing collective insights and supporting participation in outcome-based questions and events.","Prediction & Digital Platforms"],
+ ["🎮","LuckyPem – Engagement Platform","Prize pools, draws, campaigns and promotional engagement with automated winner selection, notifications and analytics.","Digital Engagement & Gaming"]],
+ caps:["Software Development","Product Development","Artificial Intelligence","Cybersecurity","Cloud Computing","DevOps & DevSecOps","Systems Integration","Biometric Technologies","API Development","Data Migration","Technical Support","Capacity Building"],
+ targets:["Government","Education","Financial Services","Border & Immigration","Smart Cities","Public Institutions","Private Enterprises","International Organizations","Digital Economy"],
+ lists:[["Technology Areas",["Artificial Intelligence, Cloud Computing, Cybersecurity, Biometrics, Digital Identity","API & Interoperability, Mobile Technologies, Enterprise Platforms, Data Platforms, DevSecOps"]],
+ ["Digital Transformation Solutions",["End-to-end: discovery, design, software engineering, systems integration, cybersecurity, cloud infrastructure, deployment, training and technical support."]]],
+ contact:[["Company","21 Tech Private Limited"],["Location","Thimphu, Bhutan"],["Gelephu Entity","21 Tech Gelephu Pte. Limited, Gelephu Mindfulness City"],["Focal Person","Mr. Tenzin Tshering (CTO)"],["Email","tenztshering@21.tech.bt"],["Telephone","77894675"],["Website","21.tech.bt"]]}
+];
+
+/* Directory as published (26 entries). `id` links to a full profile where one exists. */
+const D=[
+["aBit Private Limited","IT Company","Retail & Service","abit"],["Altiora","Startup","Digital Content"],["Athang Pvt Ltd","IT Company","Enterprise ERP","athang"],
+["ChainZeeper","IT Company","Blockchain"],["Dragon Coders Private Limited","IT Company","Retail & Hospitality","dragon"],["Fungi Flow Ecosystem","Startup","Agriculture","fungi"],
+["Genexia","Startup","Tax Technology"],["Green E-Integrated Pvt. Ltd. (GEIPL)","IT Company","Gamification & Apps"],["Host Your Tour","IT Company","Tourism"],
+["Innovates","IT Company","Retail & ERP"],["Jaggle AI Private Limited","Startup","Project Management","jaggle"],["Light WebX Private Limited","Startup","Web/Marketing","lightwebx"],
+["NGN Technologies Pvt. Ltd","IT Company","Enterprise ERP","ngn"],["NoMind","Startup","Finance/All"],["NOVANA","Startup","Governance"],
+["NUK 9 PRIVATE LIMITED","Cybersecurity (FDI)","Enterprise Security","nuk9"],["Parkingbt Tech Team","Startup","Transportation"],["Robotics & IoT Training Institute","IT Company","Education"],
+["Secure Link Services Bhutan Pvt. Ltd","IT Company","Enterprise"],["Thimphu TechPark Limited","IT Company","Enterprise Automation","techpark"],["VIHelp","Startup","Assistive Tech","vihelp"],
+["Yeti Pulse","IT Company","Retail","yeti"],["Zealous Systems","IT Company","Tourism & Retail","zealous"],["Yang Khor Private Limited","IT Company","ICT Solutions & Systems Integration","yangkhor"],
+["Bhutan NDI","Digital Identity Platform","Digital Identity & Trust","ndi"],["21 Tech Private Limited","IT Company","Digital Solutions & Technology","21tech"]
+].map((r,i)=>({no:i+1,name:r[0],cat:r[1],sector:r[2],id:r[3]||null}));
+
+/* ============ HELPERS ============ */
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const byId=id=>C.find(c=>c.id===id);
+const initials=n=>n.split(/\s+/).filter(w=>/^[A-Za-z0-9]/.test(w)).slice(0,2).map(w=>w[0]).join('').toUpperCase();
+function logo(c){return `<div class="logo"><img src="${c.logo}" alt="${esc(c.name)} logo" loading="lazy" onerror="this.parentNode.textContent='${initials(c.name)}'"></div>`}
+
+/* ============ NAV / VIEWS ============ */
+function go(v){
+  $$('#tabs .tab').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+  $$('body > .view').forEach(x=>x.classList.remove('act'));
+  $('#v-'+v).classList.add('act');
+  history.replaceState(null,'','#'+v);
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(observe,50);
+}
+$$('#tabs .tab').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();go(a.dataset.v)}));
+
+/* ============ HERO ============ */
+const phrases=["> loading local innovation…","> 26 companies · 30+ digital products","> AI · ERP · POS · Identity · IoT · Cybersecurity","> built in Bhutan, for Bhutan."];
+(function typer(){const el=$('#typer');let p=0,i=0,del=false;
+  (function tick(){const s=phrases[p];el.textContent=s.slice(0,i);
+    if(!del&&i===s.length){del=true;return setTimeout(tick,1600)}
+    if(del&&i===0){del=false;p=(p+1)%phrases.length}
+    i+=del?-1:1;setTimeout(tick,del?18:45)})()})();
+function counters(){$$('[data-n]').forEach(el=>{if(el.dataset.done)return;el.dataset.done=1;const t=+el.dataset.n,s=el.dataset.s||'';let n=0;
+  const step=()=>{n+=Math.max(1,Math.ceil(t/40));if(n>=t){el.textContent=t+s}else{el.textContent=n;requestAnimationFrame(step)}};step()})}
+setTimeout(counters,400);
+
+/* snapshot chips */
+$('#snapTech').innerHTML=Object.values(TECH).map(t=>`<span class="chip">${t}</span>`).join('');
+$('#snapSec').innerHTML=SECTORS.concat(["Transportation"]).map(t=>`<span class="chip">${t}</span>`).join('');
+
+/* ============ COMPANY GRID ============ */
+const state={q:'',tech:new Set(),sec:new Set()};
+function chips(el,items,set){
+  Object.entries(items).forEach(([k,v])=>{const c=document.createElement('span');c.className='chip';c.textContent=v;
+    c.onclick=()=>{set.has(k)?set.delete(k):set.add(k);c.classList.toggle('on');render()};el.appendChild(c)})}
+chips($('#fTech'),TECH,state.tech);
+chips($('#fSec'),Object.fromEntries(SECTORS.map(s=>[s,s])),state.sec);
+$('#q').addEventListener('input',e=>{state.q=e.target.value.toLowerCase();render()});
+
+const blob=c=>[c.name,c.cat,c.focus,c.overview,c.caps.join(' '),c.targets.join(' '),c.products.map(p=>p[1]+' '+p[2]).join(' '),c.lists.map(l=>l[1].join(' ')).join(' '),c.tech.map(t=>TECH[t]).join(' '),c.sec.join(' ')].join(' ').toLowerCase();
+let shown=[];
+function render(){
+  shown=C.filter(c=>(!state.q||blob(c).includes(state.q))&&(![...state.tech].length||[...state.tech].every(t=>c.tech.includes(t)))&&(![...state.sec].length||[...state.sec].some(s=>c.sec.includes(s))));
+  $('#grid').innerHTML=shown.map((c,i)=>`
+   <div class="co rev" data-id="${c.id}" style="transition-delay:${Math.min(i,8)*40}ms"><div class="co-in">
+     <div class="co-top">${logo(c)}<span class="idx">#${String(C.indexOf(c)+1).padStart(2,'0')}</span></div>
+     <h3>${esc(c.name)}</h3><div class="cat">${esc(c.cat)} · ${esc(c.focus.split('·')[0].trim())}</div>
+     <p>${esc(c.overview)}</p>
+     <div class="tags">${c.tech.slice(0,3).map(t=>`<span class="tg">${TECH[t]}</span>`).join('')}${c.sec.slice(0,2).map(s=>`<span class="tg v">${s}</span>`).join('')}</div>
+     <div class="open">${c.products.length} PRODUCTS · OPEN PROFILE <span>→</span></div></div></div>`).join('');
+  $('#empty').style.display=shown.length?'none':'block';
+  $('#cnt').innerHTML=`SHOWING <b>${shown.length}</b> / ${C.length} PROFILES`;
+  $$('.co').forEach(el=>{
+    el.onclick=()=>openCo(el.dataset.id);
+    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height,i=$('.co-in',el);
+      i.style.transform=`rotateX(${(.5-y)*8}deg) rotateY(${(x-.5)*10}deg)`;i.style.setProperty('--mx',x*100+'%');i.style.setProperty('--my',y*100+'%')});
+    el.addEventListener('mouseleave',()=>$('.co-in',el).style.transform='');
+  });
+  observe();
+}
+
+/* ============ MODAL ============ */
+let cur=null;
+function openCo(id){
+  const c=byId(id);if(!c)return;cur=id;const i=C.indexOf(c);
+  const list=(t,a)=>`<div class="blk"><h4>${t}</h4><ul class="ul">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  const tg=(t,a,cl='tg')=>`<div class="blk"><h4>${t}</h4><div class="tags" style="margin:0">${a.map(x=>`<span class="${cl}">${esc(x)}</span>`).join('')}</div></div>`;
+  const crow=([k,v])=>{let val=esc(v);
+    if(/@/.test(v))val=`<a href="mailto:${esc(v)}">${esc(v)}</a>`;
+    else if(/^\+?[\d\s-]{6,}$/.test(v))val=`<a href="tel:${v.replace(/[^\d+]/g,'')}">${esc(v)}</a>`;
+    else if(/^(www\.|[\w-]+\.tech\.bt)/.test(v))val=`<a href="https://${esc(v)}" target="_blank" rel="noopener">${esc(v)}</a>`;
+    const cp=/@|^\+?[\d\s-]{6,}$/.test(v)?`<button class="cp" data-c="${esc(v)}">COPY</button>`:'';
+    return `<div class="crow"><em>${esc(k)}</em><span>${val}</span>${cp}</div>`};
+  $('#sheet').innerHTML=`
+   <div class="sh-head"><button class="x" aria-label="Close" onclick="closeCo()">✕</button>${logo(c)}
+     <div><h2>${esc(c.name)}</h2><div class="meta"><span><b>Category</b> ${esc(c.cat)}</span><span><b>Focus</b> ${esc(c.focus)}</span><span><b>Profile</b> ${String(i+1).padStart(2,'0')} / ${C.length}</span></div></div></div>
+   <div class="sh-body">
+     <div class="blk"><h4>Company Overview</h4><p>${esc(c.overview)}</p></div>
+     <div class="blk"><h4>Products &amp; Solutions · ${c.products.length}</h4><div class="prods">
+       ${c.products.map((p,k)=>`<div class="pr" style="animation-delay:${k*70}ms"><div class="ic">${p[0]}</div><h5>${esc(p[1])}</h5><p>${esc(p[2])}</p><small>${esc(p[3])}</small></div>`).join('')}</div></div>
+     <div class="two">${tg('Key Capabilities',c.caps)}${tg('Technology Areas',c.techAreas||c.tech.map(t=>TECH[t]),'tg v')}</div>
+     <div class="two">${tg('Sectors Served',c.sec)}${tg('Target Users / Markets',c.targets,'tg v')}</div>
+     ${c.lists.map(l=>list(l[0],l[1])).join('')}
+     <div class="blk"><h4>Get in Touch</h4><div class="contact">${c.contact.map(crow).join('')}</div></div>
+   </div>
+   <div class="nav2"><button onclick="step(-1)">← PREVIOUS</button><button onclick="closeCo()">CLOSE</button><button onclick="step(1)">NEXT →</button></div>`;
+  $('#modal').classList.add('show');document.body.style.overflow='hidden';$('#modal').scrollTop=0;
+  $$('.cp',$('#sheet')).forEach(b=>b.onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(b.dataset.c);b.textContent='COPIED ✓';setTimeout(()=>b.textContent='COPY',1500)});
+}
+function closeCo(){$('#modal').classList.remove('show');document.body.style.overflow='';cur=null}
+function step(d){const l=shown.length?shown:C;let i=l.findIndex(c=>c.id===cur);i=(i+d+l.length)%l.length;openCo(l[i].id)}
+$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeCo()});
+document.addEventListener('keydown',e=>{if(!cur)return;if(e.key==='Escape')closeCo();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+
+/* ============ DIRECTORY ============ */
+let sk='no',sd=1,dq='';
+function renderDir(){
+  const rows=D.filter(r=>!dq||(r.name+r.cat+r.sector).toLowerCase().includes(dq)).sort((a,b)=>(a[sk]>b[sk]?1:a[sk]<b[sk]?-1:0)*sd||0);
+  $('#dbody').innerHTML=rows.map(r=>`<tr class="${r.id?'lnk':''}" ${r.id?`data-id="${r.id}"`:''}><td>${r.no}</td><td>${esc(r.name)}${r.id?' <span style="color:var(--cyan)">↗</span>':' <span style="color:var(--mute);font-size:11px">· profile pending</span>'}</td><td>${esc(r.cat)}</td><td>${esc(r.sector)}</td></tr>`).join('');
+  $$('#dbody tr[data-id]').forEach(t=>t.onclick=()=>openCo(t.dataset.id));
+}
+$$('th[data-k]').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sd=sk===k?-sd:1;sk=k;renderDir()});
+$('#dq').addEventListener('input',e=>{dq=e.target.value.toLowerCase();renderDir()});
+
+/* ============ INDEXES ============ */
+let ixMode='tech';
+function renderIx(){
+  const groups=ixMode==='tech'?Object.entries(TECH).map(([k,v])=>[v,C.filter(c=>c.tech.includes(k))]):SECTORS.map(s=>[s,C.filter(c=>c.sec.includes(s))]);
+  $('#ixgrid').innerHTML=groups.filter(g=>g[1].length).map(g=>`<div class="card rev"><h3>${g[0]}<span>${String(g[1].length).padStart(2,'0')}</span></h3><div class="mini">${g[1].map(c=>`<a data-id="${c.id}">${esc(c.name)}</a>`).join('')}</div></div>`).join('');
+  $$('#ixgrid a').forEach(a=>a.onclick=()=>openCo(a.dataset.id));observe();
+}
+$$('[data-ix]').forEach(c=>c.onclick=()=>{ixMode=c.dataset.ix;$$('[data-ix]').forEach(x=>x.classList.toggle('on',x===c));renderIx()});
+
+/* ============ REVEAL / SCROLL / CURSOR ============ */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+function observe(){$$('.rev:not(.in)').forEach(el=>io.observe(el))}
+addEventListener('scroll',()=>{const h=document.documentElement;$('#progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+addEventListener('mousemove',e=>{const g=$('#glow');g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+
+/* ============ NEURAL NETWORK BACKGROUND ============ */
+(function(){
+  const cv=$('#bg'),ctx=cv.getContext('2d');let W,H,pts=[],m={x:-999,y:-999};
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;const n=Math.min(110,Math.floor(W*H/14000));
+    pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4,r:Math.random()*1.6+.6,h:Math.random()<.2?270:190}))}
+  addEventListener('resize',size);addEventListener('mousemove',e=>{m.x=e.clientX;m.y=e.clientY});size();
+  (function draw(){
+    ctx.clearRect(0,0,W,H);
+    const g=ctx.createRadialGradient(W*.15,H*.2,0,W*.15,H*.2,W*.6);g.addColorStop(0,'rgba(20,70,140,.35)');g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    const g2=ctx.createRadialGradient(W*.85,H*.8,0,W*.85,H*.8,W*.55);g2.addColorStop(0,'rgba(90,60,200,.28)');g2.addColorStop(1,'transparent');ctx.fillStyle=g2;ctx.fillRect(0,0,W,H);
+    for(const p of pts){
+      if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+        const dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy);if(d<140){p.x+=dx/d*1.2;p.y+=dy/d*1.2}}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle=`hsla(${p.h},100%,70%,.85)`;ctx.fill()}
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<130){ctx.strokeStyle=`rgba(56,217,255,${(1-d/130)*.28})`;ctx.lineWidth=.7;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke()}}
+    for(const p of pts){const d=Math.hypot(p.x-m.x,p.y-m.y);if(d<170){ctx.strokeStyle=`rgba(90,242,176,${(1-d/170)*.5})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(m.x,m.y);ctx.stroke()}}
+    requestAnimationFrame(draw)})();
+})();
+
+/* INIT */
+render();renderDir();renderIx();observe();
+const h=location.hash.slice(1);if(['companies','directory','indexes'].includes(h))go(h);
+</script>
 </body>
 </html>
